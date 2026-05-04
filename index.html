@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spendly — Privacy Policy</title>
+  <style>
+    :root {
+      --primary: #0066FF;
+      --bg: #FAFBFC;
+      --card: #FFFFFF;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --accent-bg: #EFF6FF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary), #0044CC);
+      color: #fff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: .5rem;
+    }
+    .header p {
+      font-size: 1rem;
+      opacity: .85;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-btn {
+      padding: .5rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: 100px;
+      background: var(--card);
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .lang-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 2rem 0 .75rem;
+      color: var(--primary);
+    }
+    h2:first-child { margin-top: 0; }
+
+    p { margin-bottom: .75rem; }
+
+    ul {
+      margin: .5rem 0 1rem 1.5rem;
+    }
+    li { margin-bottom: .35rem; }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: .9rem;
+    }
+    .data-table th, .data-table td {
+      padding: .65rem .75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table th {
+      background: var(--accent-bg);
+      font-weight: 700;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      color: var(--muted);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .badge-green { background: #D1FAE5; color: #065F46; }
+    .badge-blue { background: #DBEAFE; color: #1E40AF; }
+    .badge-yellow { background: #FEF3C7; color: #92400E; }
+
+    .highlight-box {
+      background: var(--accent-bg);
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1rem 0;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #EFF6FF, #F0F9FF);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .contact-box a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .hidden { display: none; }
+
+    @media (max-width: 600px) {
+      .header { padding: 2rem 1rem; }
+      .header h1 { font-size: 1.5rem; }
+      .card { padding: 1.5rem; }
+      .data-table { font-size: .8rem; }
+      .data-table th, .data-table td { padding: .5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Spendly</h1>
+  <p id="header-subtitle">Privacy Policy</p>
+</div>
+
+<div class="container">
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="switchLang('ru')">Русский</button>
+    <button class="lang-btn" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('uz')">O'zbek</button>
+  </div>
+
+  <!-- ═══════════════ RUSSIAN ═══════════════ -->
+  <div id="lang-ru" class="card">
+    <p style="color:var(--muted);font-size:.85rem;">Дата вступления в силу: 3 апреля 2026 г.</p>
+
+    <h2>1. Общие сведения</h2>
+    <p>Spendly ("Приложение") — мобильное приложение для учёта личных финансов. Настоящая Политика описывает, какие данные мы собираем, зачем и как их защищаем.</p>
+
+    <h2>2. Какие данные мы собираем</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Категория</th><th>Данные</th><th>Цель</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">Аккаунт</span></td>
+          <td>Имя, email, логин, язык, валюта по умолчанию</td>
+          <td>Регистрация и персонализация</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Финансы</span></td>
+          <td>Счета, транзакции, категории, цели, долги</td>
+          <td>Основная функциональность приложения</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-yellow">Устройство</span></td>
+          <td>Название устройства, модель, ОС, платформа, IP-адрес</td>
+          <td>Безопасность и управление сессиями</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-yellow">Push-токен</span></td>
+          <td>FCM токен устройства</td>
+          <td>Отправка push-уведомлений</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Чего мы НЕ делаем</h2>
+    <ul>
+      <li>Не продаём и не передаём ваши данные третьим лицам</li>
+      <li>Не показываем рекламу</li>
+      <li>Не используем данные для профилирования или аналитики сторонних сервисов</li>
+      <li>Не собираем контакты, фото, геолокацию или данные других приложений</li>
+    </ul>
+
+    <h2>4. Хранение и защита данных</h2>
+    <div class="highlight-box">
+      <strong>Все данные хранятся на защищённом сервере</strong> с использованием шифрования соединения (HTTPS/TLS). Пароли хранятся в виде bcrypt-хеша и никогда не передаются в открытом виде.
+    </div>
+    <p>Токены авторизации (JWT) имеют ограниченный срок действия. Сессии привязаны к конкретному устройству.</p>
+
+    <h2>5. Сторонние сервисы</h2>
+    <ul>
+      <li><strong>Firebase Cloud Messaging (FCM)</strong> — для доставки push-уведомлений. <a href="https://firebase.google.com/support/privacy" target="_blank">Политика Firebase</a></li>
+      <li><strong>CBU API / open.er-api.com</strong> — для получения курсов валют. Ваши персональные данные не передаются этим сервисам.</li>
+    </ul>
+
+    <h2>6. Ваши права</h2>
+    <p>Вы имеете право:</p>
+    <ul>
+      <li>Просматривать все свои данные в приложении</li>
+      <li>Редактировать или удалять транзакции, счета, категории, цели и долги</li>
+      <li>Запросить полное удаление аккаунта и всех связанных данных</li>
+      <li>Отключить push-уведомления в настройках устройства</li>
+    </ul>
+
+    <h2>7. Удаление данных</h2>
+    <p>Для полного удаления аккаунта и всех данных напишите нам на email ниже. Данные будут удалены в течение 30 дней.</p>
+
+    <h2>8. Изменения политики</h2>
+    <p>Мы можем обновлять данную Политику. Актуальная версия всегда доступна на этой странице. При существенных изменениях мы уведомим пользователей через приложение.</p>
+
+    <div class="contact-box">
+      <p><strong>Контакты</strong></p>
+      <p>По любым вопросам: <a href="mailto:support@fintrack-ai.uz">support@fintrack-ai.uz</a></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ ENGLISH ═══════════════ -->
+  <div id="lang-en" class="card hidden">
+    <p style="color:var(--muted);font-size:.85rem;">Effective date: April 3, 2026</p>
+
+    <h2>1. Introduction</h2>
+    <p>Spendly ("App") is a mobile application for personal finance tracking. This Policy describes what data we collect, why, and how we protect it.</p>
+
+    <h2>2. Data We Collect</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Category</th><th>Data</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">Account</span></td>
+          <td>Name, email, username, language, default currency</td>
+          <td>Registration and personalization</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Financial</span></td>
+          <td>Accounts, transactions, categories, goals, debts</td>
+          <td>Core app functionality</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-yellow">Device</span></td>
+          <td>Device name, model, OS, platform, IP address</td>
+          <td>Security and session management</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-yellow">Push token</span></td>
+          <td>FCM device token</td>
+          <td>Push notification delivery</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. What We Do NOT Do</h2>
+    <ul>
+      <li>We do not sell or share your data with third parties</li>
+      <li>We do not display advertisements</li>
+      <li>We do not use your data for profiling or third-party analytics</li>
+      <li>We do not collect contacts, photos, location, or data from other apps</li>
+    </ul>
+
+    <h2>4. Data Storage and Security</h2>
+    <div class="highlight-box">
+      <strong>All data is stored on a secure server</strong> using encrypted connections (HTTPS/TLS). Passwords are stored as bcrypt hashes and are never transmitted in plain text.
+    </div>
+    <p>Authorization tokens (JWT) have a limited lifetime. Sessions are bound to specific devices.</p>
+
+    <h2>5. Third-Party Services</h2>
+    <ul>
+      <li><strong>Firebase Cloud Messaging (FCM)</strong> — for push notification delivery. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
+      <li><strong>CBU API / open.er-api.com</strong> — for currency exchange rates. No personal data is sent to these services.</li>
+    </ul>
+
+    <h2>6. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>View all your data within the app</li>
+      <li>Edit or delete transactions, accounts, categories, goals, and debts</li>
+      <li>Request complete deletion of your account and all associated data</li>
+      <li>Disable push notifications in your device settings</li>
+    </ul>
+
+    <h2>7. Data Deletion</h2>
+    <p>To completely delete your account and all data, contact us at the email below. Data will be removed within 30 days.</p>
+
+    <h2>8. Policy Changes</h2>
+    <p>We may update this Policy. The current version is always available on this page. For significant changes, we will notify users through the app.</p>
+
+    <div class="contact-box">
+      <p><strong>Contact</strong></p>
+      <p>For any questions: <a href="mailto:support@fintrack-ai.uz">support@fintrack-ai.uz</a></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ UZBEK ═══════════════ -->
+  <div id="lang-uz" class="card hidden">
+    <p style="color:var(--muted);font-size:.85rem;">Kuchga kirish sanasi: 2026-yil 3-aprel</p>
+
+    <h2>1. Umumiy ma'lumot</h2>
+    <p>Spendly ("Ilova") — shaxsiy moliyani boshqarish uchun mobil ilova. Ushbu Siyosat qanday ma'lumotlar to'planishi, nima uchun va qanday himoyalanishini tavsiflaydi.</p>
+
+    <h2>2. Qanday ma'lumotlar to'planadi</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Kategoriya</th><th>Ma'lumotlar</th><th>Maqsad</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-blue">Hisob</span></td>
+          <td>Ism, email, login, til, asosiy valyuta</td>
+          <td>Ro'yxatdan o'tish va shaxsiylashtirish</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-green">Moliyaviy</span></td>
+          <td>Hisoblar, tranzaksiyalar, kategoriyalar, maqsadlar, qarzlar</td>
+          <td>Ilovaning asosiy funksiyalari</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-yellow">Qurilma</span></td>
+          <td>Qurilma nomi, modeli, OT, platforma, IP-manzil</td>
+          <td>Xavfsizlik va sessiyalarni boshqarish</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-yellow">Push-token</span></td>
+          <td>FCM qurilma tokeni</td>
+          <td>Push-bildirishnomalar yuborish</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Biz nima QILMAYMIZ</h2>
+    <ul>
+      <li>Ma'lumotlaringizni uchinchi shaxslarga sotmaymiz yoki bermaymiz</li>
+      <li>Reklama ko'rsatmaymiz</li>
+      <li>Ma'lumotlaringizni profillash yoki tashqi analitika uchun ishlatmaymiz</li>
+      <li>Kontaktlar, suratlar, joylashuv yoki boshqa ilovalar ma'lumotlarini to'plamaymiz</li>
+    </ul>
+
+    <h2>4. Ma'lumotlarni saqlash va himoya</h2>
+    <div class="highlight-box">
+      <strong>Barcha ma'lumotlar himoyalangan serverda saqlanadi</strong>, shifrlangan ulanish (HTTPS/TLS) orqali. Parollar bcrypt-xesh ko'rinishida saqlanadi va hech qachon ochiq holda uzatilmaydi.
+    </div>
+    <p>Avtorizatsiya tokenlari (JWT) cheklangan muddatga ega. Sessiyalar muayyan qurilmaga bog'langan.</p>
+
+    <h2>5. Uchinchi tomon xizmatlari</h2>
+    <ul>
+      <li><strong>Firebase Cloud Messaging (FCM)</strong> — push-bildirishnomalar uchun. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase maxfiylik siyosati</a></li>
+      <li><strong>CBU API / open.er-api.com</strong> — valyuta kurslari uchun. Shaxsiy ma'lumotlar bu xizmatlarga yuborilmaydi.</li>
+    </ul>
+
+    <h2>6. Sizning huquqlaringiz</h2>
+    <p>Sizda quyidagi huquqlar bor:</p>
+    <ul>
+      <li>Ilovada barcha ma'lumotlaringizni ko'rish</li>
+      <li>Tranzaksiyalar, hisoblar, kategoriyalar, maqsadlar va qarzlarni tahrirlash yoki o'chirish</li>
+      <li>Hisobingiz va barcha bog'liq ma'lumotlarning to'liq o'chirilishini so'rash</li>
+      <li>Qurilma sozlamalarida push-bildirishnomalarni o'chirish</li>
+    </ul>
+
+    <h2>7. Ma'lumotlarni o'chirish</h2>
+    <p>Hisobingiz va barcha ma'lumotlarni to'liq o'chirish uchun quyidagi emailga yozing. Ma'lumotlar 30 kun ichida o'chiriladi.</p>
+
+    <h2>8. Siyosat o'zgarishlari</h2>
+    <p>Biz ushbu Siyosatni yangilashimiz mumkin. Joriy versiya doimo ushbu sahifada mavjud. Muhim o'zgarishlar haqida foydalanuvchilar ilova orqali xabardor qilinadi.</p>
+
+    <div class="contact-box">
+      <p><strong>Aloqa</strong></p>
+      <p>Savollar uchun: <a href="mailto:support@fintrack-ai.uz">support@fintrack-ai.uz</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  &copy; 2026 Spendly. All rights reserved.
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('[id^="lang-"]').forEach(function(el) { el.classList.add('hidden'); });
+  document.getElementById('lang-' + lang).classList.remove('hidden');
+  event.target.classList.add('active');
+
+  var subtitles = { ru: 'Политика конфиденциальности', en: 'Privacy Policy', uz: 'Maxfiylik siyosati' };
+  document.getElementById('header-subtitle').textContent = subtitles[lang] || 'Privacy Policy';
+}
+</script>
+
+</body>
+</html>
