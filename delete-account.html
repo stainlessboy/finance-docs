@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spendly — Удаление аккаунта</title>
+  <style>
+    :root {
+      --primary: #0066FF;
+      --bg: #FAFBFC;
+      --card: #FFFFFF;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --danger: #DC2626;
+      --warning-bg: #FEF3C7;
+      --warning-border: #F59E0B;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary), #0044CC);
+      color: #fff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: .5rem;
+    }
+    .header p {
+      font-size: 1rem;
+      opacity: .9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.04);
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+    .lang-btn {
+      padding: .5rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: 100px;
+      background: var(--card);
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .lang-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 2rem 0 .75rem;
+      color: var(--primary);
+    }
+    h2:first-child { margin-top: 0; }
+
+    p { margin-bottom: .75rem; }
+    ul { margin: .5rem 0 1rem 1.5rem; }
+    li { margin-bottom: .35rem; }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #F9FAFB;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .step-content { flex: 1; }
+    .step-title { font-weight: 700; margin-bottom: .25rem; }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border-left: 4px solid var(--warning-border);
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1rem 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: .9rem;
+    }
+    .data-table th, .data-table td {
+      padding: .65rem .75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table th {
+      background: #EFF6FF;
+      font-weight: 700;
+      font-size: .8rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .badge-red { background: #FEE2E2; color: #991B1B; }
+    .badge-blue { background: #DBEAFE; color: #1E40AF; }
+
+    .contact-box {
+      background: linear-gradient(135deg, #EFF6FF, #F0F9FF);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .contact-box a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+
+    .email-link {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      background: var(--primary);
+      color: #fff !important;
+      border-radius: 100px;
+      text-decoration: none !important;
+      font-weight: 700;
+      margin-top: .5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .hidden { display: none; }
+
+    @media (max-width: 600px) {
+      .header { padding: 2rem 1rem; }
+      .header h1 { font-size: 1.5rem; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Spendly</h1>
+  <p id="header-subtitle">Удаление аккаунта</p>
+</div>
+
+<div class="container">
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="switchLang('ru')">Русский</button>
+    <button class="lang-btn" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('uz')">O'zbek</button>
+  </div>
+
+  <!-- ═══════════════ RUSSIAN ═══════════════ -->
+  <div id="lang-ru" class="card">
+    <h2>Как удалить аккаунт</h2>
+    <p>Вы можете удалить свой аккаунт Spendly и все связанные с ним данные двумя способами:</p>
+
+    <h2>Способ 1: Через приложение</h2>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <div class="step-title">Откройте приложение Spendly</div>
+        <div>Войдите в свою учётную запись</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <div class="step-title">Перейдите в Настройки</div>
+        <div>В нижнем меню выберите "Ещё" → "Настройки" → "Профиль"</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <div class="step-title">Нажмите "Удалить аккаунт"</div>
+        <div>Подтвердите удаление в появившемся окне</div>
+      </div>
+    </div>
+
+    <h2>Способ 2: По email</h2>
+    <p>Если у вас нет доступа к приложению, отправьте запрос на удаление аккаунта по email:</p>
+    <p style="text-align:center;">
+      <a href="mailto:support@fintrack-ai.uz?subject=Запрос на удаление аккаунта&body=Прошу удалить мой аккаунт Spendly.%0A%0AEmail аккаунта: <ваш email>%0AПричина (необязательно): " class="email-link">
+        support@fintrack-ai.uz
+      </a>
+    </p>
+    <p>В письме укажите:</p>
+    <ul>
+      <li>Email вашей учётной записи Spendly</li>
+      <li>Причину удаления (необязательно)</li>
+    </ul>
+    <p>Аккаунт будет удалён в течение <strong>30 дней</strong> с момента получения запроса.</p>
+
+    <h2>Какие данные удаляются</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Данные</th><th>Действие</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Email и имя пользователя</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Пароль (хэш)</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Все транзакции</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Все счета</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Все категории</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Все цели и долги</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Push-токены устройств</td><td><span class="badge badge-red">Удалится</span></td></tr>
+        <tr><td>Все сессии</td><td><span class="badge badge-red">Удалится</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <strong>⚠️ Внимание:</strong> Удаление аккаунта <strong>необратимо</strong>. После удаления восстановить данные невозможно. Перед удалением рекомендуем экспортировать важные данные через приложение.
+    </div>
+
+    <h2>Сроки</h2>
+    <ul>
+      <li><strong>Запрос через приложение:</strong> данные удаляются мгновенно</li>
+      <li><strong>Запрос по email:</strong> до 30 дней с момента получения письма</li>
+      <li><strong>Логи и резервные копии:</strong> удаляются в течение 90 дней (требование backup-системы)</li>
+    </ul>
+
+    <div class="contact-box">
+      <p><strong>Нужна помощь?</strong></p>
+      <p>Свяжитесь с нами: <a href="mailto:support@fintrack-ai.uz">support@fintrack-ai.uz</a></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ ENGLISH ═══════════════ -->
+  <div id="lang-en" class="card hidden">
+    <h2>How to Delete Your Account</h2>
+    <p>You can delete your Spendly account and all associated data in two ways:</p>
+
+    <h2>Method 1: Through the App</h2>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <div class="step-title">Open the Spendly app</div>
+        <div>Log into your account</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <div class="step-title">Go to Settings</div>
+        <div>Bottom menu → "More" → "Settings" → "Profile"</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <div class="step-title">Tap "Delete Account"</div>
+        <div>Confirm deletion in the dialog</div>
+      </div>
+    </div>
+
+    <h2>Method 2: By Email</h2>
+    <p>If you no longer have access to the app, send an account deletion request via email:</p>
+    <p style="text-align:center;">
+      <a href="mailto:support@fintrack-ai.uz?subject=Account Deletion Request&body=Please delete my Spendly account.%0A%0AAccount email: <your email>%0AReason (optional): " class="email-link">
+        support@fintrack-ai.uz
+      </a>
+    </p>
+    <p>In the email, please include:</p>
+    <ul>
+      <li>Your Spendly account email</li>
+      <li>Reason for deletion (optional)</li>
+    </ul>
+    <p>The account will be deleted within <strong>30 days</strong> of receiving the request.</p>
+
+    <h2>What Data is Deleted</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Data</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Email and username</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>Password (hash)</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>All transactions</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>All accounts</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>All categories</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>All goals and debts</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>Push device tokens</td><td><span class="badge badge-red">Deleted</span></td></tr>
+        <tr><td>All sessions</td><td><span class="badge badge-red">Deleted</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <strong>⚠️ Warning:</strong> Account deletion is <strong>irreversible</strong>. Data cannot be recovered after deletion. We recommend exporting important data through the app before deleting.
+    </div>
+
+    <h2>Timeline</h2>
+    <ul>
+      <li><strong>In-app request:</strong> data deleted instantly</li>
+      <li><strong>Email request:</strong> within 30 days of receipt</li>
+      <li><strong>Logs and backups:</strong> deleted within 90 days (backup system requirement)</li>
+    </ul>
+
+    <div class="contact-box">
+      <p><strong>Need help?</strong></p>
+      <p>Contact us: <a href="mailto:support@fintrack-ai.uz">support@fintrack-ai.uz</a></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════ UZBEK ═══════════════ -->
+  <div id="lang-uz" class="card hidden">
+    <h2>Hisobni qanday o'chirish</h2>
+    <p>Spendly hisobingizni va u bilan bog'liq barcha ma'lumotlarni ikki usulda o'chirishingiz mumkin:</p>
+
+    <h2>1-usul: Ilova orqali</h2>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <div class="step-title">Spendly ilovasini oching</div>
+        <div>Hisobingizga kiring</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <div class="step-title">Sozlamalarga o'ting</div>
+        <div>Pastki menyu → "Ko'proq" → "Sozlamalar" → "Profil"</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <div class="step-title">"Hisobni o'chirish" tugmasini bosing</div>
+        <div>Paydo bo'lgan oynada o'chirishni tasdiqlang</div>
+      </div>
+    </div>
+
+    <h2>2-usul: Email orqali</h2>
+    <p>Agar ilovaga kirish imkoniyatingiz bo'lmasa, hisobni o'chirish so'rovini email orqali yuboring:</p>
+    <p style="text-align:center;">
+      <a href="mailto:support@fintrack-ai.uz?subject=Hisobni o'chirish so'rovi&body=Iltimos, Spendly hisobimni o'chiring.%0A%0AHisob email: <sizning email>%0ASabab (ixtiyoriy): " class="email-link">
+        support@fintrack-ai.uz
+      </a>
+    </p>
+    <p>Xatda quyidagilarni ko'rsating:</p>
+    <ul>
+      <li>Spendly hisobingiz emaili</li>
+      <li>O'chirish sababi (ixtiyoriy)</li>
+    </ul>
+    <p>Hisob so'rov olingandan keyin <strong>30 kun ichida</strong> o'chiriladi.</p>
+
+    <h2>Qanday ma'lumotlar o'chiriladi</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Ma'lumot</th><th>Holat</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Email va username</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Parol (xesh)</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Barcha tranzaksiyalar</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Barcha hisoblar</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Barcha kategoriyalar</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Barcha maqsadlar va qarzlar</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Push qurilma tokenlari</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+        <tr><td>Barcha sessiyalar</td><td><span class="badge badge-red">O'chiriladi</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <strong>⚠️ Diqqat:</strong> Hisobni o'chirish <strong>qaytarib bo'lmaydi</strong>. O'chirilgandan keyin ma'lumotlarni tiklab bo'lmaydi. O'chirishdan oldin muhim ma'lumotlarni ilova orqali eksport qilish tavsiya etiladi.
+    </div>
+
+    <h2>Muddatlar</h2>
+    <ul>
+      <li><strong>Ilova orqali so'rov:</strong> ma'lumotlar darhol o'chiriladi</li>
+      <li><strong>Email orqali so'rov:</strong> 30 kun ichida</li>
+      <li><strong>Loglar va zaxira nusxalari:</strong> 90 kun ichida (zaxira tizimining talabi)</li>
+    </ul>
+
+    <div class="contact-box">
+      <p><strong>Yordam kerakmi?</strong></p>
+      <p>Biz bilan bog'laning: <a href="mailto:support@fintrack-ai.uz">support@fintrack-ai.uz</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  &copy; 2026 Spendly. <a href="index.html">Privacy Policy</a>
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('[id^="lang-"]').forEach(function(el) { el.classList.add('hidden'); });
+  document.getElementById('lang-' + lang).classList.remove('hidden');
+  event.target.classList.add('active');
+
+  var subtitles = { ru: 'Удаление аккаунта', en: 'Account Deletion', uz: 'Hisobni o\'chirish' };
+  document.getElementById('header-subtitle').textContent = subtitles[lang] || 'Account Deletion';
+}
+</script>
+
+</body>
+</html>
